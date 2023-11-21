@@ -2,6 +2,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/fire_config";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -27,7 +28,7 @@ const Login = () => {
   return (
     <>
       <div className="w-full h-screen flex justify-center items-center font-sans ">
-        <div className="w-1/2 lg:w-1/4 h-1/2 rounded-3xl p-4 bg-blue-300 flex justify-center items-center flex-col gap-3">
+        <div className="sd:w-4/5 md:w-2/5 lg:w-1/4 h-1/2 rounded-3xl p-4 bg-blue-300 flex justify-center items-center flex-col gap-3">
           <input
             type="email"
             placeholder="Email"
@@ -52,6 +53,9 @@ const Login = () => {
           >
             Log In
           </button>
+          <Link to={'/signup'} className="text-white underline">
+            Sign up
+          </Link>
         </div>
       </div>
     </>

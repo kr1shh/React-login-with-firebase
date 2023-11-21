@@ -31,7 +31,7 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col gap-2 justify-center items-center font-sans font-extrabold text-2xl">
+    <div className="w-full h-screen flex flex-col gap-2 justify-center items-center font-sans font-extrabold text-2xl text-center">
       {userData ? (
         <p>You are logged in as : {userData.email}</p>
       ) : (

@@ -3,6 +3,10 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/fire_config";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+
+
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,7 +29,7 @@ const Signup = () => {
   return (
     <>
       <div className="w-full h-screen flex justify-center items-center font-sans ">
-        <div className="w-1/2 lg:w-1/4 h-1/2 rounded-3xl p-4 bg-blue-300 flex justify-center items-center flex-col gap-3">
+        <div className="sd:w-4/5 md:w-2/5 lg:w-1/4 h-1/2 rounded-3xl p-4 bg-blue-600 flex justify-center items-center flex-col gap-3">
           <input
             type="email"
             placeholder="Email"
@@ -46,10 +50,13 @@ const Signup = () => {
           />
           <button
             onClick={signUp}
-            className="text-white border-2 border-white rounded-lg w-24 h-10 hover:bg-white hover:text-blue-300 transition-all duration-300 mt-4"
+            className="text-white border-2 border-white rounded-lg w-24 h-10 hover:bg-white hover:text-blue-600 transition-all duration-300 mt-4"
           >
             Sign Up
           </button>
+          <Link to={'/login'} className="text-white underline">
+            Login
+          </Link>
         </div>
       </div>
     </>
